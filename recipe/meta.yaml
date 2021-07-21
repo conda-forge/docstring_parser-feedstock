@@ -1,5 +1,5 @@
 {% set name = "docstring_parser" %}
-{% set version = "0.8.1" %}
+{% set version = "0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dd68bbe33446e9dbdec087fd18bad8f6dc8eedda4c5c2321208951f3acfc5e04
+  sha256: 1899073cba33c3c13df6067051c7f8ab0656fd0e2a98275735456df014f07c61
 
 build:
   noarch: python

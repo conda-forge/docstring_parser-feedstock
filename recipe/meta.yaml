@@ -1,5 +1,5 @@
 {% set name = "docstring_parser" %}
-{% set version = "0.13" %}
+{% set version = "0.15" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 66dd7eac7232202bf220fd98a5f11491863c01f958a75fdd535c7eccac9ced78
+  sha256: 48ddc093e8b1865899956fcc03b03e66bb7240c310fac5af81814580c55bf682
 
 build:
   noarch: python
@@ -16,14 +16,20 @@ build:
 
 requirements:
   host:
-    - python >=3.6
     - pip
+    - poetry-core >=1.0.0
+    - python >=3.6,<4.0
   run:
     - python >=3.6
+
 
 test:
   imports:
     - docstring_parser
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/rr-/docstring_parser
@@ -40,3 +46,4 @@ extra:
   recipe-maintainers:
     - Chilipp
     - rr-
+    - thewchan
